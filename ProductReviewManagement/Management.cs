@@ -40,7 +40,6 @@ namespace ProductReviewManagement
             productReviews.Add(new ProductReview() { ProductID = 6, UserID = 4, Rating = 4, Review = "VeryGood", IsLike = true });
             productReviews.Add(new ProductReview() { ProductID = 8, UserID = 5, Rating = 3, Review = "Good", IsLike = true });
             productReviews.Add(new ProductReview() { ProductID = 17, UserID = 19, Rating = 4, Review = "VeryGood", IsLike = true });
-            IterateList(productReviews);
             return productReviews.Count;
         }
 
