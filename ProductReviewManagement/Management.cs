@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,5 +133,24 @@ namespace ProductReviewManagement
                 Console.WriteLine(list.ProductID + "\t\t" + list.Review);
             }
         } 
+
+        /// <summary>
+        /// UC 8 - Create Data Table
+        /// </summary>
+        /// <param name="productReviews"></param>
+        public static void CreateDataTable(List<ProductReview> productReviews)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ProductId");
+            dataTable.Columns.Add("UserId");
+            dataTable.Columns.Add("Rating");
+            dataTable.Columns.Add("Review");
+            dataTable.Columns.Add("IsLike");
+
+            foreach(var list in productReviews)
+            {
+                dataTable.Rows.Add(list.ProductID, list.UserID, list.Rating, list.Review, list.IsLike);
+            }
+        }
     }
 }
