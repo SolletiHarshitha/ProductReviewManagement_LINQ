@@ -132,7 +132,7 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine(list.ProductID + "\t\t" + list.Review);
             }
-        } 
+        }
 
         /// <summary>
         /// UC 8 - Create Data Table
@@ -149,16 +149,15 @@ namespace ProductReviewManagement
             dataTable.Columns.Add("Rating");
             dataTable.Columns.Add("Review");
             dataTable.Columns.Add("IsLike", typeof(bool));
-            //Adding Rows
-            foreach(var list in productReviews)
+            //Adding rows from the list
+            foreach (var list in productReviews)
             {
                 dataTable.Rows.Add(list.ProductID, list.UserID, list.Rating, list.Review, list.IsLike);
             }
-
-            
-            var result = (from product in dataTable.AsEnumerable()
+         
+            var result = from product in dataTable.AsEnumerable()
                           where product.Field<bool>("IsLike").Equals(true)
-                          select product);
+                          select product;
             //Retrieve records whose isLike value is true
             foreach (var data in result)
             {
