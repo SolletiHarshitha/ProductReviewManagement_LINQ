@@ -141,6 +141,7 @@ namespace ProductReviewManagement
         /// <param name="productReviews"></param>
         public static void CreateDataTable(List<ProductReview> productReviews)
         {
+            //UC8
             //Creating DataTable
             DataTable dataTable = new DataTable();
             //Adding Columns
@@ -154,7 +155,8 @@ namespace ProductReviewManagement
             {
                 dataTable.Rows.Add(list.ProductID, list.UserID, list.Rating, list.Review, list.IsLike);
             }
-         
+            
+            //UC9
             var result = from product in dataTable.AsEnumerable()
                           where product.Field<bool>("IsLike").Equals(true)
                           select product;
