@@ -140,13 +140,15 @@ namespace ProductReviewManagement
         /// <param name="productReviews"></param>
         public static void CreateDataTable(List<ProductReview> productReviews)
         {
+            //Creating DataTable
             DataTable dataTable = new DataTable();
+            //Adding Columns
             dataTable.Columns.Add("ProductId");
             dataTable.Columns.Add("UserId");
             dataTable.Columns.Add("Rating");
             dataTable.Columns.Add("Review");
             dataTable.Columns.Add("IsLike");
-
+            //Adding rows from the list
             foreach(var list in productReviews)
             {
                 dataTable.Rows.Add(list.ProductID, list.UserID, list.Rating, list.Review, list.IsLike);
